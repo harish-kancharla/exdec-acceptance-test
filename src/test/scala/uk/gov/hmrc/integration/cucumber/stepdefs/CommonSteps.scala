@@ -5,11 +5,14 @@ import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait
 
 class CommonSteps extends CommonFunctions {
 
-  Given("""^open bbc website$""") { () =>
-    go to "http://www.bbc.com"
+  Given("""^open Authority Wizard$""") { () =>
+    go to "https://www.qa.tax.service.gov.uk/auth-login-stub/gg-sign-in?continue=%2Fcustoms-declare-exports-frontend%2FselectRole"
   }
 
-  Then("""^I should be presented with "([^"]*)" page$""") { (page:String) =>
+  Then("""^I should click submit at bottom of the page "([^"]*)" page$""") { (page:String) =>
+    assertNavigationToPage(pageMatch(page))
+  }
+  And("""^Take me to Select Role page "([^"]*)" page$""") { (page: String) =>
     assertNavigationToPage(pageMatch(page))
   }
 

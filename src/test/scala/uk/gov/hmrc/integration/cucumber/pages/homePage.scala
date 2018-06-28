@@ -5,10 +5,10 @@ import uk.gov.hmrc.integration.cucumber.utils.PageObject
 
 object homePage extends PageObject with CommonFunctions{
 
-  def pageUrl = "https://www.bbc.co.uk/"
+  def pageUrl = "https://www.qa.tax.service.gov.uk/auth-login-stub/gg-sign-in?continue=%2Fcustoms-declare-exports-frontend%2FselectRole"
 
   def pageHeading = ""
 
-  def pageTitle = "BBC - Home"
+  def pageTitle = "Authority Wizard"
 
 }

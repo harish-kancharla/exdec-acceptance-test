@@ -1,5 +1,5 @@
 #!/bin/bash
-echo " --------------------- STARTED  - BBSI acceptance test suite with FIREFOX Browser in Local -------------------------"
+echo " --------------------- STARTED  - EXDEC acceptance test suite with Chrome Browser in QA -------------------------"
 export DISPLAY=${DISPLAY=":99"}
 sbt -Dbrowser=firefox 'test-only uk.gov.hmrc.integration.cucumber.RunnerFiles.RunTestSuite'
-echo " -------------------- ENDED - BBSI Test Automation Execution with FIREFOX Browser in local-----------------------------"
+echo " -------------------- ENDED - EXDEC Test Automation Execution with Chrome Browser in QA-----------------------------"

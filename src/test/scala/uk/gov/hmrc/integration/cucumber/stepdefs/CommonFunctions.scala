@@ -16,7 +16,7 @@ trait CommonFunctions extends ScalaDsl with EN with Matchers with WebBrowser wit
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "bbc home" => homePage
+      case "Authority Wizard" => homePage
     }
   }
 

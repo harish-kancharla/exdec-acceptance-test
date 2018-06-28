@@ -2,7 +2,7 @@ package uk.gov.hmrc.integration.cucumber.utils
 
 trait PageObject {
 
-  val bbsiRootUrl = ""
+  val exdecRootUrl = ""
   val titleSuffix = "- GOV.UK"
   def pageUrl: String
   def pageHeading: String
