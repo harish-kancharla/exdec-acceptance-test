@@ -1,4 +1,4 @@
-name := "selenium-scala-framework"
+name := "exdec-acceptance-test"
 
 version := "1.0"
 
@@ -26,6 +26,7 @@ publishArtifact in(Test, packageSrc) := true
 //
 //
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
+resolvers += "Sonatype Repo" at "http://oss.sonatype.org/content/groups/public/"
 //
 
 //resolvers += "HMRC Bintray" at "https://dl.bintray.com/hmrc/releases"
@@ -39,6 +40,7 @@ libraryDependencies ++= Seq(
   "org.pegdown"               %   "pegdown"                   %  "1.1.0"   %  "test",
   "info.cukes"                %   "cucumber-scala_2.11"       %  "1.2.4",
   "info.cukes"                %   "cucumber-junit"            %  "1.2.4",
+  "info.cukes"                %   "cucumber-core"            %  "1.2.4",
   "info.cukes"                %   "cucumber-picocontainer"    %  "1.2.4",
   "junit"                     %   "junit"                     %  "4.12"    %  "test",
   "com.novocode"              %   "junit-interface"           %  "0.11"    %  "test",
@@ -46,5 +48,6 @@ libraryDependencies ++= Seq(
   "org.zaproxy"               %  "zap-clientapi"             %  "1.3.0",
   "org.specs2"                %  "specs2-junit_2.11"              % "4.3.0",
   "org.scala-lang"                %  "scala-library"              % "2.11.8",
-  "com.typesafe"              % "config"                          % "1.2.0"
+  "com.typesafe"              % "config"                          % "1.2.0",
+  "im.mange"                  %% "flakeless"                 % "0.0.29"
 )

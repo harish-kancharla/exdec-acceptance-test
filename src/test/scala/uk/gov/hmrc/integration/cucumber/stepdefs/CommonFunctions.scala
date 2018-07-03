@@ -16,7 +16,9 @@ trait CommonFunctions extends ScalaDsl with EN with Matchers with WebBrowser wit
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "Authority Wizard" => homePage
+      case "Authority Wizard" => authLoginStubPage
+      case "Select Role" => selectRolePage
+      case "tech difficulties" => techDifficultiesPage
     }
   }
 
@@ -24,6 +26,26 @@ trait CommonFunctions extends ScalaDsl with EN with Matchers with WebBrowser wit
     Waits.waitForUrlToBeVisible(page.pageUrl)
     currentUrl shouldBe page.pageUrl
     pageTitle shouldBe s"${page.pageTitle}"
+  }
+
+  def login() = {
+    go to  authLoginStubPage.pageUrl
+    authLogin()
+
+  }
+
+  def authLogin() ={
+    textField (authLoginStubPage credIdField) value = "test"
+    click on button
+  }
+
+  def button = className("button")
+
+  def clickElement(ele:String) = {
+    ele match {
+      case "web loader arriving goods" => click on selectRolePage.selectRoleId
+    }
+
   }
 
 }

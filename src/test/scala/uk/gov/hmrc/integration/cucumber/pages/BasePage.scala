@@ -8,7 +8,7 @@ import org.scalatest.selenium.WebBrowser
 import uk.gov.hmrc.integration.cucumber.stepdefs.CommonFunctions
 
 
-abstract class BasePage extends CommonFunctions with WebBrowser {
+ trait BasePage extends CommonFunctions with WebBrowser {
 
   val fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(20, TimeUnit.SECONDS)
@@ -20,9 +20,9 @@ abstract class BasePage extends CommonFunctions with WebBrowser {
 
   def environment = System.getProperty("environment", "Qa").toLowerCase
 
-  def openPage(pageURL: String, authURL: String) {
+  def openPage(pageURL: String) {
     navigateToPage(pageURL)
-    waitForPageToLoad(authURL)
+    waitForPageToLoad(pageURL)
   }
 
   def getText(locator: By, expectedText: String) = {
