@@ -11,4 +11,6 @@ object selectRolePage extends PageObject with CommonFunctions{
 
   def selectRoleId = "selectRole.webLoaderArrivingGoods"
 
+  def exporterMakingDecisionId = "selectRole.exporterMakingDeclaration"
+
 }

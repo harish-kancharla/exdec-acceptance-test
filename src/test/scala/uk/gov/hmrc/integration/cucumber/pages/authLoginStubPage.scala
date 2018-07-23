@@ -11,4 +11,12 @@ object authLoginStubPage extends PageObject with CommonFunctions{
 
   def credIdField = "authorityId"
 
+  def enrolmentkeyField = "enrolment[0].name"
+
+  def identifiernameField = "enrolment[0].taxIdentifier[0].name"
+
+  def identifiervalueField = "enrolment[0].taxIdentifier[0].value"
+
+  def statusDropdown = "enrolment[0].state"
+
 }
