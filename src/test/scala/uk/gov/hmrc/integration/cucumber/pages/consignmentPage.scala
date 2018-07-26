@@ -9,7 +9,7 @@ object consignmentPage extends PageObject with CommonFunctions{
 
   def pageTitle = "Consignment"
 
-  def consigmentID = "consignment.consolidation"
+  def consigmentID = "radio-consolidation"
 
   def ducrConsolidation = "ducr-consolidation-input"
 

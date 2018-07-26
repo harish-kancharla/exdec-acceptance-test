@@ -7,7 +7,7 @@ object DashboardPage extends PageObject with CommonFunctions{
 
   def pageUrl = "https://www.qa.tax.service.gov.uk/customs-declare-exports-frontend/dashboard"
 
-  def pageTitle = "Dashboard"
+  def pageTitle = "EDS dashboard"
 
   def declarationField = "simplifiedDeclaration"
 

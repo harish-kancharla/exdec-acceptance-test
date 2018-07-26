@@ -8,7 +8,7 @@ import org.scalatest.selenium.WebBrowser
 import uk.gov.hmrc.integration.cucumber.stepdefs.CommonFunctions
 
 
- trait BasePage extends CommonFunctions with WebBrowser {
+trait BasePage extends CommonFunctions with WebBrowser {
 
   val fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(20, TimeUnit.SECONDS)
@@ -55,11 +55,15 @@ import uk.gov.hmrc.integration.cucumber.stepdefs.CommonFunctions
   }
 
   def clickOnButton(button: String) = {
-    driver.findElement(By.xpath(s"//button[contains(text(),'$button')]")).click()
+    if (button == "Start now")
+      driver.findElement(By.xpath(s"//a[contains(text(),'$button')]")).click()
+    else
+      driver.findElement(By.xpath(s"//button[contains(text(),'$button')]")).click()
   }
 
   def waitForElementClickable(locator: By) = new WebDriverWait(driver, 20)
-//  def waitForElementClickable(locator: By) = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(locator))
+
+  //  def waitForElementClickable(locator: By) = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(locator))
 
   def elementDisplayed(by: By): Boolean = {
     try {
@@ -126,7 +130,7 @@ import uk.gov.hmrc.integration.cucumber.stepdefs.CommonFunctions
   }
 
   def enterText(selector: By, value: String) = {
-     sendKeys(selector, value.trim)
+    sendKeys(selector, value.trim)
   }
 
   def verifyLiteralText(selector: By, textToConfirm: String) {
@@ -161,11 +165,13 @@ import uk.gov.hmrc.integration.cucumber.stepdefs.CommonFunctions
     jumpToElement(selector)
     clickElement(selector, Keys.RETURN)
   }
+
   private def jumpToElement(el: By)(implicit driver: WebDriver): WebElement = {
     val element: WebElement = driver.findElement(el)
     new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(el))
     element
   }
+
   private def clickElement(el: By, keys: CharSequence*)(implicit driver: WebDriver): Unit = {
     val element = jumpToElement(el)
     element.sendKeys(keys: _*)

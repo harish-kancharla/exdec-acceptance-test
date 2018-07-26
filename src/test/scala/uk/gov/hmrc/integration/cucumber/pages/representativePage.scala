@@ -7,8 +7,8 @@ object representativePage extends PageObject with CommonFunctions{
 
   def pageUrl = "https://www.qa.tax.service.gov.uk/customs-declare-exports-frontend/haveRepresentative"
 
-  def pageTitle = "Consignment"
+  def pageTitle = "Exporter representative"
 
-  def representativeID = "haveRepresentative.no"
+  def representativeID = "haveRepresentative.yes"
 
 }

@@ -7,7 +7,7 @@ object enterEORIPage extends PageObject with CommonFunctions{
 
   def pageUrl = "https://www.qa.tax.service.gov.uk/customs-declare-exports-frontend/enterEORI"
 
-  def pageTitle = "Consignment"
+  def pageTitle = "enterEORI"
 
   def valueField = "value"
 

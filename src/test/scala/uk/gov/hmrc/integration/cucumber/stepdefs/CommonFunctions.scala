@@ -20,8 +20,14 @@ trait CommonFunctions extends ScalaDsl with EN with Matchers with WebBrowser wit
       case "Select Role" => selectRolePage
       case "tech difficulties" => techDifficultiesPage
       case "consignment" => consignmentPage
-      case "submit" => submitPage
-     // case "customs" => customsPage
+      case "submit" => declarationsummaryPage
+      case "Dashboard" => DashboardPage
+      case "Export Declarations" => CustomsExportPage
+      case "Own decalaration" => ownDescription
+      case "Exporter representative" => representativePage
+      case "enter EORI" => enterEORIPage
+      case "Full export declaration" => representativesaddressPage
+
     }
   }
 
@@ -54,11 +60,12 @@ trait CommonFunctions extends ScalaDsl with EN with Matchers with WebBrowser wit
       case "web loader arriving goods" => click on selectRolePage.selectRoleId
       case "Exporter making declaration" => click on selectRolePage.exporterMakingDecisionId
       case "consolidation" => click on consignmentPage.consigmentID
-      case "declaration" => click on declarationPage.consigmentdeclarationID
-      case "confirmation" => click on confirmationPage.consigmentconfirmationID
+      case "declaration" => click on ownDescription.consigmentdeclarationID
+      case "confirmation" => click on whosedeclarationPage.consigmentconfirmationID
       case "representative" => click on representativePage.representativeID
       case "Dashboard" => click on DashboardPage.declarationField
       case "enterEORI" => click on enterEORIPage.buttonID
+      case "CustomsExport" => click on CustomsExportPage.startField
 
 
     }

@@ -47,7 +47,7 @@ libraryDependencies ++= Seq(
   "org.scalaj"                %%  "scalaj-http"               %  "0.3.16",
   "org.zaproxy"               %  "zap-clientapi"             %  "1.3.0",
   "org.specs2"                %  "specs2-junit_2.11"              % "4.3.0",
-  "org.scala-lang"                %  "scala-library"              % "2.11.8",
+  "org.scala-lang"                %  "scala-library"              % "2.12.4",
   "com.typesafe"              % "config"                          % "1.2.0",
   "im.mange"                  %% "flakeless"                 % "0.0.29"
 )

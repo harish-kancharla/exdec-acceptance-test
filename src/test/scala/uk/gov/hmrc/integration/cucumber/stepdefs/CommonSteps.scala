@@ -3,7 +3,7 @@ package uk.gov.hmrc.integration.cucumber.stepdefs
 import org.openqa.selenium._
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait, _}
 import im.mange.flakeless._
-import uk.gov.hmrc.integration.cucumber.pages.{BasePage, submitPage}
+import uk.gov.hmrc.integration.cucumber.pages._
 
 class CommonSteps extends CommonFunctions with BasePage {
 
@@ -19,20 +19,18 @@ class CommonSteps extends CommonFunctions with BasePage {
     //originally written
     clickElement(option)
 
-    //using selenium webdriver
-    //driver.findElement(By.id("selectRole.webLoaderArrivingGoods")).click()
-
-    //using flakeless
-    //    val element: WebElement = driver.findElement(By.id("selectRole.webLoaderArrivingGoods"))
-    //    Click(element, By.id("selectRole.webLoaderArrivingGoods"))
   }
 
   And("""^Click "(.*)" button$""") { (button: String) =>
-    clickOnButton("Save and continue")
+    clickOnButton(button)
   }
 
-  And("""^Click "(.*)" link$""") { (link: String) =>
-    clickOn("simplifiedDeclaration")
+//  And("""^Click "(.*)" button$""") { (button: String) =>
+//    clickOnButton("Start now")
+//  }
+
+  And("""^Click "(.*)" link$""") { (linkText: String) =>
+    clickOn(DashboardPage.declarationField)
   }
 
   Then("""^I enter "(.*)" in "(.*)" page$""") { (ele: String, page:String) =>

@@ -12,5 +12,4 @@ import org.junit.runner.RunWith
   tags = Array("@wip")
 )
 class RunWip {
-
 }
